@@ -10,5 +10,34 @@
         = link_to "マイページ", "#", class: "mypage-link"
 
 %main.top-main
-  
+  .top-main__contents
+    .swiper-container
+      %h1 ここにスライドショーが入る予定
+
+    .search-form
+      .search-form__contents
+        .search-box
+          %form.search-box__form
+            %input{placeholder: "キーワード", class: "search-box__form__input"}
+            %input{placeholder: "エリア", class: "search-box__form__input"}
+            %input{placeholder: "カテゴリー", class: "search-box__form__input"}
+            %button.search-box__form__submitBtn 
+            
+    %section.p-contents.history-log
+      .history-log__contents
+        .history-log__contents__title
+          %h2 保存したお店
+        .history-log__contents__restaurants
+          %ul.restaurants-list
+            %li.restaurants-list-item
+            %li.restaurants-list-item
+            %li.restaurants-list-item
+            %li.restaurants-list-item
+
+    %section.p-contents
+    %section.p-contents
+
+
+
+
 
