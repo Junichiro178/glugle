@@ -1,0 +1,190 @@
+$main-color: #aeea00;
+
+.toppage-header {
+  width: 100%;
+  background-color: #f9fbe7;
+  padding: 8px 2px;
+  .header-inner {
+    margin: 0 auto;
+    width: 940px;
+    display: flex;
+    justify-content: space-between;
+    &__title {
+      font-size: 24px;
+      line-height: 50px;
+    }
+    &__right-box {
+      display: flex;
+      line-height: 50px;
+      &__likes{
+        margin-right: 15px;
+        .likes-link {
+          text-decoration: none;
+          color: black;
+        }
+      }
+      &__mypage {
+        .mypage-link {
+          text-decoration: none;
+          color: black;
+        }
+      }
+    }
+  }
+}
+.top-main {
+  width: 100%;
+  .swiper-container {
+    height: 300px;
+    background-color: $main-color;
+    text-align: center;
+    h1{
+      line-height: 300px;
+    }
+  }
+  
+  .search-form {
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.2);
+    &__contents {
+      width: 940px;
+      margin: 0 auto;
+      padding: 20px;
+      .search-box {
+        width: 100%;
+        &__form {
+          display: flex;
+          align-items: center;
+          &__input {
+            width: 25%;
+            height: 50px;
+            padding-left: 5px;
+            margin-right: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+          }
+          &__submitBtn {
+            background-color: $main-color;
+            color: #37474f;
+            font-size: 15px;
+            font-weight: bold;
+            margin-left: 5px;
+            line-height: 50px;
+            width: 15%;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+  }
+  .border {
+    background-color:  #f0f0f0;
+    height: 30px;
+    width: 100%;
+  }
+
+  .history-log {
+    &__contents {
+      width: 940px;
+      padding-bottom: 30px;
+      margin: 0 auto;
+      &__title {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        h2 {
+          padding: 30px 20px 10px 20px;
+          width: 100px;
+          color: #e32f2f;
+          font-weight: 600;
+          border-bottom: 3px solid #e32f2f;
+        }
+      }
+      &__restaurants {
+        .restaurants-list {
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          &__item {
+            width: 14%;
+            &__image {
+              width: 110px;
+              height: 110px;
+            }
+            &__title {
+              font-size: 12px;
+              width: 80%;
+            }
+            &__location {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .category-recommendation {
+    padding-bottom: 40px;
+    &__contents {
+      width: 940px;
+      margin: 0 auto;
+      padding-top: 30px;
+      border-top: 4px solid #f0f0f0;
+      &__title {
+        text-align: center;
+        h2 {
+          font-size: 24px;
+          font-weight: 600;
+        }
+      }
+      .category-container {
+        margin-top: 30px;
+        .category-list {
+          display: flex;
+          &__item {
+            position: relative;
+            .first-image {
+              margin-right: 1px;
+              .category-first-image{
+                height: 280px;
+              }
+            }
+            &__description {
+              color: #fff;
+              bottom: 6px;
+              position: absolute;
+              padding: 10px 20px 20px;
+              background: linear-gradient(180deg,transparent 0,rgba(0,0,0,.2) 20%,rgba(0,0,0,.4));
+              .category-title {
+                font-weight: 700;
+                font-size: 20px;
+              }
+              .category-about{
+                margin-top: 5px;
+                font-size: 13px;
+                font-weight: 100;
+              }
+            }
+            &__image {
+              margin-right: 1px;
+              .category-image {
+                width: 235px;
+                height: 280px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  width: 100;
+  background-color: #f0f0f0;
+  text-align: center;
+  .glugle {
+    line-height: 200px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+

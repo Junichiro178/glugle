@@ -1,0 +1,167 @@
+%header.toppage-header
+  .header-inner
+    %h1.header-inner__title glugle
+    .header-inner__right-box
+      .header-inner__right-box__likes
+        = link_to "#", class: "likes-link" do
+          %i.fas.fa-heart
+          %span お気に入り
+      .header-inner__right-box__mypage
+        = link_to "マイページ", "#", class: "mypage-link"
+
+%main.top-main
+  .top-main__contents
+    .swiper-container
+      %h1 ここにスライドショーが入る予定
+
+    .search-form
+      .search-form__contents
+        .search-box
+          %form.search-box__form
+            %input{placeholder: "キーワード", class: "search-box__form__input"}
+            %input{placeholder: "エリア", class: "search-box__form__input"}
+            %input{placeholder: "カテゴリー", class: "search-box__form__input"}
+            %button.search-box__form__submitBtn 検索
+    
+    %section.border
+
+    %section.history-log
+      .history-log__contents
+        .history-log__contents__title
+          %h2 保存したお店
+        .history-log__contents__restaurants
+          %ul.restaurants-list
+            %li.restaurants-list__item
+              = image_tag 'cafelatte.jpeg', class: 'restaurants-list__item__image'
+              %p.restaurants-list__item__title Cafe de Stream
+              %p.restaurants-list__item__location 人形町
+            %li.restaurants-list__item
+              = image_tag 'fish-slices.jpg', class: 'restaurants-list__item__image'
+              %p.restaurants-list__item__title 和風居酒屋 神
+              %p.restaurants-list__item__location 新宿
+            %li.restaurants-list__item
+              = image_tag 'ramen.jpg', class: 'restaurants-list__item__image'
+              %p.restaurants-list__item__title 中華食堂あかり
+              %p.restaurants-list__item__location 渋谷
+            %li.restaurants-list__item
+              = image_tag 'fried-chicken.jpeg', class: 'restaurants-list__item__image'
+              %p.restaurants-list__item__title グルテンフリーカフェ パッチン
+              %p.restaurants-list__item__location 原宿
+            %li.restaurants-list__item
+              = image_tag 'hamburger.jpeg', class: 'restaurants-list__item__image'
+              %p.restaurants-list__item__title グルテンフリーバーガー LIVE
+              %p.restaurants-list__item__location 原宿
+            %li.restaurants-list__item
+              = image_tag 'matcha-latte.jpeg', class: 'restaurants-list__item__image'
+              %p.restaurants-list__item__title Organic kitchen
+              %p.restaurants-list__item__location 恵比寿
+            %li.restaurants-list__item
+              = image_tag 'fish-ramen.jpeg', class: 'restaurants-list__item__image'
+              %p.restaurants-list__item__title 鯛や
+              %p.restaurants-list__item__location 錦糸町
+
+    %section.p-category.category-recommendation
+      .category-recommendation__contents
+        .category-recommendation__contents__title
+          %h2 人気のカテゴリー
+        .category-container
+          %ul.category-list
+            %li.category-list__item
+              .category-list__item__image.first-image
+                = image_tag "FishMoose.jpeg", class: "category-first-image"
+              .category-list__item__description
+                %h2.category-title グルテンフリー
+                %p.category-about 小麦不使用のアレルギー対応料理。アレルギーに困っている人はもちろん、健康にも良いと人気トレンドに！
+            %li.category-list__item
+              .category-list__item__image
+                = image_tag "vegan-salad.jpeg", class: "category-image"
+              .category-list__item__description
+                %h2.category-title ヴィーガン
+                %p.category-about 動物性食品不使用のため美容・健康に良いと話題に！
+            %li.category-list__item
+              .category-list__item__image
+                = image_tag "organic-latte.jpeg", class: "category-image"
+              .category-list__item__description
+                %h2.category-title オーガニック
+                %p.category-about 化学添加物不使用の有機食材を使用する料理が急増！
+
+    %section.p-tags.category-recommendation
+      .category-recommendation__contents
+        .category-recommendation__contents__title
+          %h2 人気の条件・こだわり
+        .category-container
+          %ul.category-list
+            %li.category-list__item
+              .category-list__item__image.first-image
+                = image_tag "FishMoose.jpeg", class: "category-first-image"
+              .category-list__item__description
+                %h2.category-title 個室
+                %p.category-about 個室でゆったりと過ごせます！少人数で密にならずに楽しく会話できます！
+            %li.category-list__item
+              .category-list__item__image
+                = image_tag "vegan-salad.jpeg", class: "category-image"
+              .category-list__item__description
+                %h2.category-title テイクアウトOK
+                %p.category-about ソーシャルディスタンスを気にせず、持ち帰りできます！
+            %li.category-list__item
+              .category-list__item__image
+                = image_tag "organic-latte.jpeg", class: "category-image"
+              .category-list__item__description
+                %h2.category-title 飲み放題
+                %p.category-about お酒もエンジョイしたい人には最適！どんなドリンクも用意します！
+
+    %section.p-article.category-recommendation
+      .category-recommendation__contents
+        .category-recommendation__contents__title
+          %h2 人気の条件・こだわり
+        .category-container
+          %ul.category-list
+            %li.category-list__item
+              .category-list__item__image.first-image
+                = image_tag "FishMoose.jpeg", class: "category-first-image"
+              .category-list__item__description
+                %h2.category-title 個室
+                %p.category-about 個室でゆったりと過ごせます！少人数で密にならずに楽しく会話できます！
+            %li.category-list__item
+              .category-list__item__image
+                = image_tag "vegan-salad.jpeg", class: "category-image"
+              .category-list__item__description
+                %h2.category-title テイクアウトOK
+                %p.category-about ソーシャルディスタンスを気にせず、持ち帰りできます！
+            %li.category-list__item
+              .category-list__item__image
+                = image_tag "organic-latte.jpeg", class: "category-image"
+              .category-list__item__description
+                %h2.category-title 飲み放題
+                %p.category-about お酒も楽しみたい人には最適！どんなドリンクも用意します！
+
+    %section.p-contents.category-recommendation
+      .category-recommendation__contents
+        .category-recommendation__contents__title
+          %h2 おすすめ特集
+        .category-container
+          %ul.category-list
+            %li.category-list__item
+              .category-list__item__image.first-image
+                = image_tag "FishMoose.jpeg", class: "category-first-image"
+              .category-list__item__description
+                %h2.category-title グルテンフリー特集！
+                %p.category-about 昨今話題沸騰のグルテンフリーに関する記事です！グルテンフリーに役立つ情報をお届けします！
+            %li.category-list__item
+              .category-list__item__image
+                = image_tag "vegan-salad.jpeg", class: "category-image"
+              .category-list__item__description
+                %h2.category-title ヴィーガン特集！
+                %p.category-about ヴィーガンの料理や、レストランについての情報を発信します！
+            %li.category-list__item
+              .category-list__item__image
+                = image_tag "organic-latte.jpeg", class: "category-image"
+              .category-list__item__description
+                %h2.category-title オーガニック特集！
+                %p.category-about 健康に良いと話題のオーガニックを解説します！
+
+%section.footer
+  %p.glugle glugle.inc
+
+
+
