@@ -8,7 +8,7 @@
             %i.fas.fa-heart
             %span お気に入り
         .header-inner__right-box__mypage
-          = link_to "マイページ", "#", class: "mypage-link"
+          = link_to "マイページ", user_path(current_user), class: "mypage-link"
         .header-inner__right-box__logout
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn"
       - else
