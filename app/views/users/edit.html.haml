@@ -1,1 +1,20 @@
-%h2 ユーザー情報編集画面
+
+= render "layouts/users/header"
+
+.user-edit-page
+  .user-edit-page__contents 
+    %h2.user-edit-page__contents__title ユーザー情報編集画面
+    .user-edit-page__contents__form
+      = form_for(current_user) do |f|
+        .edit-field
+          .edit-field__label
+            = f.label :username, "ユーザー名"
+          .edit-field__input
+            = f.text_field :username, autofocus: true, class: "edit-field__input__form"
+        .edit-field
+          .edit-field__label
+            = f.label :email
+          .edit-field__input
+            = f.email_field :email, class: "edit-field__input__form"
+        .actions
+          = f.submit "保存", class: 'submit-btn'
