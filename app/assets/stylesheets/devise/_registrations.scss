@@ -1,0 +1,32 @@
+.sign-up-page {
+  &__contents {
+    padding: 20px 50px 50px;
+    width: 300px;
+    margin: 0 auto;
+    border: 1px solid #0f0f0f;
+    &__title {
+      text-align: center;
+      line-height: 100px;
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .new_user {
+      .field {
+        .field-label {
+  
+        }
+        .field-input {
+          margin-bottom: 10px;
+          &__form {
+            width: 100%;
+          }
+        }
+      }
+      .actions {
+        margin-bottom: 10px;
+        .submit-btn {
+        }
+      }
+    }
+  }
+}
