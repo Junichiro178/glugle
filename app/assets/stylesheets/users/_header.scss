@@ -1,0 +1,11 @@
+.header {
+  &__contents {
+    background-color: #f9fbe7;
+    .user-name {
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 50px;
+      line-height: 50px;
+    }
+  }
+}
