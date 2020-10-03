@@ -4,7 +4,7 @@
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       .sign-in-field
         .sign-in-field__label
-          = f.label :email
+          = f.label :email, "email"
         .sign-in-field__input
           = f.email_field :email, autofocus: true, class:"sign-in-field__input__form"
       .sign-in-field
