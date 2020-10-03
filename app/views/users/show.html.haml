@@ -1,0 +1,10 @@
+
+= render "layouts/users/header"
+
+.mypage
+  .mypage__contents
+    %h2.mypage__contents__title My glugle
+    .mypage__contents__setting
+      = link_to edit_user_path(current_user), class: "user-edit-btn" do
+        %span.text 設定
+        %i.fas.fa-cogs.gear-icon
