@@ -2,20 +2,20 @@
   .header-inner
     %h1.header-inner__title glugle
     .header-inner__right-box
-      - if user_signed_in?
-        .header-inner__right-box__likes
-          = link_to "#", class: "likes-link" do
-            %i.fas.fa-heart
-            %span お気に入り
-        .header-inner__right-box__mypage
-          = link_to "マイページ", user_path(current_user), class: "mypage-link"
-        .header-inner__right-box__logout
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn"
-      - else
-        .header-inner__right-box__login
-          = link_to "ログイン", new_user_session_path, class: "login-btn"
-        .header-inner__right-box__registration
-          = link_to "新規登録", new_user_registration_path, class: "registration-btn"
+      -# - if user_signed_in?
+      .header-inner__right-box__likes
+        = link_to "#", class: "likes-link" do
+          %i.fas.fa-heart
+          %span お気に入り
+      .header-inner__right-box__mypage
+        = link_to "マイページ", user_path(current_user), class: "mypage-link"
+      .header-inner__right-box__logout
+        = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout-btn"
+      -# - else
+      -#   .header-inner__right-box__login
+      -#     = link_to "ログイン", new_user_session_path, class: "login-btn"
+      -#   .header-inner__right-box__registration
+      -#     = link_to "新規登録", new_user_registration_path, class: "registration-btn"
 
 %main.top-main
   .top-main__contents
