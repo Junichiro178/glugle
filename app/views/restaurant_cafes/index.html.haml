@@ -167,6 +167,17 @@
               .category-list__item__description
                 %h2.category-title オーガニック特集！
                 %p.category-about 健康に良いと話題のオーガニックを解説します！
+      
+      %section.restaurant-registration
+        .restaurant-registration__contents
+          .restaurant-registration__contents__title
+            %h2 お店の新規登録はこちら!
+          .restaurant-registration__contents__form
+            %p お店がまだ登録されていないオーナーさんは、こちらから登録を行いましょう！
+            = link_to new_restaurant_cafe_path, class: "restaurant-registration-btn" do
+              %span 新しくお店を出店
+              %i.fas.fa-store
+
 
 %section.footer
   %p.glugle glugle.inc
