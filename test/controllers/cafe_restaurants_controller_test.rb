@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RestaurantCafeTest < ActiveSupport::TestCase
+class CafeRestaurantsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

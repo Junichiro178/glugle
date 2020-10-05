@@ -1,2 +1,0 @@
-class RestaurantCafe < ApplicationRecord
-end
