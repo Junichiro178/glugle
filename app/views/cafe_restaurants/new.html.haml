@@ -1,3 +1,38 @@
 .new-restaurant
   .new-restaurant__contents
-    
+    %h2 レストラン新規登録
+    %p  お店を新しく掲載する場合は、こちらの画面より店舗情報を入力の上、申請をしてください。
+    = form_with model: @cafe_restaurant, local: true, class: "sales__page__main", id: "form" do |form|
+      .field
+        %p 店名
+        = form.text_field :name
+      .field
+        %p 店名（フリガナ）
+        = form.text_field :phonetic_name
+      .field
+        %p 電話番号
+        = form.text_field :phone_number
+      .field
+        %p お店の説明
+        = form.text_area :description
+      .field
+        %p 営業時間
+        = form.text_field :opening_hours
+      .field
+        %p 定休日
+        = form.text_field :regular_holidays
+      .field
+        %p 都道府県
+        = form.text_field :prefecture
+      .field
+        %p 市区町村
+        = form.text_field :city_ward
+      .field
+        %p 番地
+        = form.text_field :block_number
+      .field
+        %p ビル名
+        = form.text_field :building_name
+      .field
+        = form.submit "送信"
+
