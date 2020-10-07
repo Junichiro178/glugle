@@ -25,7 +25,7 @@ class CafeRestaurantsController < ApplicationController
       :description,
       :opening_hours, 
       :regular_holidays, 
-      :prefecture, 
+      :prefecture_id,
       :city_ward, 
       :block_number, 
       :building_name
