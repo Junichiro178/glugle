@@ -4,6 +4,7 @@ class CafeRestaurantsController < ApplicationController
 
   def new
     @cafe_restaurant = CafeRestaurant.new
+    @images = @cafe_restaurant.restaurant_images.new
   end
 
   def create
@@ -29,7 +30,8 @@ class CafeRestaurantsController < ApplicationController
       :prefecture_id,
       :city_ward, 
       :block_number, 
-      :building_name
+      :building_name,
+      restaurant_images_attributes: [:id, :image]
       )
       .merge(owner_id: current_user.id)
   end
