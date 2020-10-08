@@ -12,7 +12,7 @@ class CafeRestaurantsController < ApplicationController
     if @cafe_restaurant.save
       redirect_to root_path
     else
-      redirect_to root_path, alert: "お店を登録できませんでした"
+      redirect_to new_cafe_restaurant_path, alert: "お店を登録できませんでした"
     end
   end
 
