@@ -16,6 +16,14 @@
         %p お店の説明
         = form.text_area :description
       .field
+        %p カテゴリー
+        = form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
+          = category.label do
+            = category.check_box
+            = category.text
+
+
+      .field
         %p 営業時間
         = form.text_field :opening_hours
       .field

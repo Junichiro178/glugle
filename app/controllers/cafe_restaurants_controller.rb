@@ -23,6 +23,7 @@ class CafeRestaurantsController < ApplicationController
       :phonetic_name,
       :phone_number, 
       :description,
+      { category_ids: [] },
       :opening_hours, 
       :regular_holidays, 
       :prefecture_id,
