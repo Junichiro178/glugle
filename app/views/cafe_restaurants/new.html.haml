@@ -1,0 +1,74 @@
+.new-restaurant
+  .new-restaurant__contents
+    %h2.new-restaurant__contents__title レストラン新規登録
+    %p.new-restaurant__contents__text ※お店を新しく掲載する場合は、こちらの画面より店舗情報を入力の上、申請をしてください。
+    = form_with model: @cafe_restaurant, local: true, class: "new-restaurant__contents__form", id: "form" do |form|
+      .form-container
+        %h3.form-container__info-title 店名
+        %table.form-container__info-table
+          %tr
+            %th.table-holder 店名
+            %td.table-data
+              = form.text_field :name, placeholder: "(例) カフェ glugle", class: "table-data__input-field"
+          %tr
+            %th.table-holder 店名（フリガナ）
+            %td.table-data
+              = form.text_field :phonetic_name, placeholder: "(例) カフェグルグル", class: "table-data__input-field"
+
+        %h3.form-container__info-title 電話番号・ロケーション
+        %table.form-container__info-table
+          %tr 
+            %th.table-holder 電話番号
+            %td.table-data
+              = form.text_field :phone_number, placeholder: "(例) 03-1234-5678", class: "table-data__input-field"
+          %tr 
+            %th.table-holder 都道府県
+            %td.table-data
+              = form.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"} )
+          %tr 
+            %th.table-holder 市区町村
+            %td.table-data
+              = form.text_field :city_ward, placeholder: "(例) 中央区", class: "table-data__input-field"
+          %tr 
+            %th.table-holder 番地
+            %td.table-data
+              = form.text_field :block_number, placeholder: "(例) 銀座 3-1-1", class: "table-data__input-field"
+          %tr 
+            %th.table-holder ビル名
+            %td.table-data
+              = form.text_field :building_name, placeholder: "メゾングランタワー 2F", class: "table-data__input-field"
+
+        %h3.form-container__info-title カテゴリー情報
+        %table.form-container__info-table
+          %tr 
+            %th.table-holder カテゴリー
+            %td.table-data
+              = form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
+                = category.label do
+                  = category.check_box
+                  = category.text
+
+        %h3.form-container__info-title 詳細情報
+        .image-uploader
+          %h4.image-uploader__title お店の画像
+          .image-uploader__form
+            = form.fields_for :images do |img|
+              = img.file_field :image
+              
+        %table.form-container__info-table
+          %tr
+            %th.table-holder お店の説明
+            %td.table-data
+              = form.text_area :description, placeholder: "お店を説明を好きなように書いてください", class: "table-data__input-textarea"
+          %tr 
+            %th.table-holder 営業時間
+            %td.table-data
+              = form.text_field :opening_hours, placeholder: "(例) 10:00〜20:00", class: "table-data__input-field"
+          %tr 
+            %th.table-holder 定休日
+            %td.table-data
+              = form.text_field :regular_holidays, placeholder: "(例) 土日祝日", class: "table-data__input-field"
+
+        .field
+          = form.submit "お店を登録", class: "restaurant-submit-btn"
+

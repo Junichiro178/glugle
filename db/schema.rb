@@ -10,23 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_01_222831) do
+ActiveRecord::Schema.define(version: 2020_10_08_064635) do
 
-  create_table "restaurant_cafes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "cafe_restaurant_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "cafe_restaurant_id", null: false
+    t.bigint "category_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cafe_restaurant_id"], name: "index_cafe_restaurant_categories_on_cafe_restaurant_id"
+    t.index ["category_id"], name: "index_cafe_restaurant_categories_on_category_id"
+  end
+
+  create_table "cafe_restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "phonetic_name", null: false
     t.string "phone_number", null: false
     t.string "description", null: false
     t.string "opening_hours", null: false
     t.string "regular_holidays", null: false
-    t.integer "prefecture", null: false
+    t.integer "prefecture_id", null: false
     t.string "city_ward", null: false
     t.string "block_number", null: false
     t.string "building_name"
     t.bigint "owner_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_id"], name: "index_restaurant_cafes_on_owner_id"
+    t.index ["owner_id"], name: "index_cafe_restaurants_on_owner_id"
+  end
+
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.bigint "cafe_restaurant_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cafe_restaurant_id"], name: "index_images_on_cafe_restaurant_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

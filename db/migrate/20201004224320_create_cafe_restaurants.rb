@@ -1,6 +1,6 @@
-class CreateRestaurantCafes < ActiveRecord::Migration[5.2]
+class CreateCafeRestaurants < ActiveRecord::Migration[5.2]
   def change
-    create_table :restaurant_cafes do |t|
+    create_table :cafe_restaurants do |t|
       t.string :name, null: false
       t.string :phonetic_name, null: false
       t.string :phone_number, null: false, unique: true
