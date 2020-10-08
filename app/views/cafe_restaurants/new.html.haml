@@ -1,46 +1,68 @@
 .new-restaurant
   .new-restaurant__contents
-    %h2 レストラン新規登録
-    %p  お店を新しく掲載する場合は、こちらの画面より店舗情報を入力の上、申請をしてください。
-    = form_with model: @cafe_restaurant, local: true, class: "sales__page__main", id: "form" do |form|
-      .field
-        %p 店名
-        = form.text_field :name
-      .field
-        %p 店名（フリガナ）
-        = form.text_field :phonetic_name
-      .field
-        %p 電話番号
-        = form.text_field :phone_number
-      .field
-        %p お店の説明
-        = form.text_area :description
-      .field
-        %p カテゴリー
-        = form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
-          = category.label do
-            = category.check_box
-            = category.text
+    %h2.new-restaurant__contents__title レストラン新規登録
+    %p.new-restaurant__contents__text ※お店を新しく掲載する場合は、こちらの画面より店舗情報を入力の上、申請をしてください。
+    = form_with model: @cafe_restaurant, local: true, class: "new-restaurant__contents__form", id: "form" do |form|
+      .form-container
+        %h3.form-container__info-title 店名
+        %table.form-container__info-table
+          %tr
+            %th.table-holder 店名
+            %td.table-data
+              = form.text_field :name
+          %tr
+            %th.table-holder 店名（フリガナ）
+            %td.table-data
+              = form.text_field :phonetic_name
 
+        %h3.form-container__info-title 電話番号・ロケーション
+        %table.form-container__info-table
+          %tr 
+            %th.table-holder 電話番号
+            %td.table-data
+              = form.text_field :phone_number
+          %tr 
+            %th.table-holder 都道府県
+            %td.table-data
+              = form.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"} )
+          %tr 
+            %th.table-holder 市区町村
+            %td.table-data
+              = form.text_field :city_ward
+          %tr 
+            %th.table-holder 番地
+            %td.table-data
+              = form.text_field :block_number
+          %tr 
+            %th.table-holder ビル名
+            %td.table-data
+              = form.text_field :building_name
 
-      .field
-        %p 営業時間
-        = form.text_field :opening_hours
-      .field
-        %p 定休日
-        = form.text_field :regular_holidays
-      .field
-        %p 都道府県
-        = form.collection_select(:prefecture_id, Prefecture.all, :id, :name, {include_blank: "---"} )
-      .field
-        %p 市区町村
-        = form.text_field :city_ward
-      .field
-        %p 番地
-        = form.text_field :block_number
-      .field
-        %p ビル名
-        = form.text_field :building_name
-      .field
-        = form.submit "送信"
+        %h3.form-container__info-title カテゴリー情報
+        %table.form-container__info-table
+          %tr 
+            %th.table-holder カテゴリー
+            %td
+              = form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
+                = category.label do
+                  = category.check_box
+                  = category.text
+
+        %h3.form-container__info-title 詳細情報
+        %table.form-container__info-table
+          %tr 
+            %th.table-holder お店の説明
+            %td.table-data
+              = form.text_area :description
+          %tr 
+            %th.table-holder 営業時間
+            %td.table-data
+              = form.text_field :opening_hours
+          %tr 
+            %th.table-holder 定休日
+            %td.table-data
+              = form.text_field :regular_holidays
+
+        .field
+          = form.submit "送信"
 
