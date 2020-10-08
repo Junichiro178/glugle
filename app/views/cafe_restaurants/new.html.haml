@@ -9,18 +9,18 @@
           %tr
             %th.table-holder 店名
             %td.table-data
-              = form.text_field :name
+              = form.text_field :name, placeholder: "(例) カフェ glugle", class: "table-data__input-field"
           %tr
             %th.table-holder 店名（フリガナ）
             %td.table-data
-              = form.text_field :phonetic_name
+              = form.text_field :phonetic_name, placeholder: "(例) カフェグルグル", class: "table-data__input-field"
 
         %h3.form-container__info-title 電話番号・ロケーション
         %table.form-container__info-table
           %tr 
             %th.table-holder 電話番号
             %td.table-data
-              = form.text_field :phone_number
+              = form.text_field :phone_number, placeholder: "(例) 03-1234-5678", class: "table-data__input-field"
           %tr 
             %th.table-holder 都道府県
             %td.table-data
@@ -28,30 +28,30 @@
           %tr 
             %th.table-holder 市区町村
             %td.table-data
-              = form.text_field :city_ward
+              = form.text_field :city_ward, placeholder: "(例) 中央区", class: "table-data__input-field"
           %tr 
             %th.table-holder 番地
             %td.table-data
-              = form.text_field :block_number
+              = form.text_field :block_number, placeholder: "(例) 銀座 3-1-1", class: "table-data__input-field"
           %tr 
             %th.table-holder ビル名
             %td.table-data
-              = form.text_field :building_name
+              = form.text_field :building_name, placeholder: "メゾングランタワー 2F", class: "table-data__input-field"
 
         %h3.form-container__info-title カテゴリー情報
         %table.form-container__info-table
           %tr 
             %th.table-holder カテゴリー
-            %td
+            %td.table-data
               = form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
                 = category.label do
                   = category.check_box
                   = category.text
 
         %h3.form-container__info-title 詳細情報
-        .restaurant-image
-          %h4.restaurant-image__title お店の画像
-          .restaurant-image__uploader
+        .image-uploader
+          %h4.image-uploader__title お店の画像
+          .image-uploader__form
             = form.fields_for :images do |img|
               = img.file_field :image
               
@@ -59,16 +59,16 @@
           %tr
             %th.table-holder お店の説明
             %td.table-data
-              = form.text_area :description
+              = form.text_area :description, placeholder: "お店を説明を好きなように書いてください", class: "table-data__input-textarea"
           %tr 
             %th.table-holder 営業時間
             %td.table-data
-              = form.text_field :opening_hours
+              = form.text_field :opening_hours, placeholder: "(例) 10:00〜20:00", class: "table-data__input-field"
           %tr 
             %th.table-holder 定休日
             %td.table-data
-              = form.text_field :regular_holidays
+              = form.text_field :regular_holidays, placeholder: "(例) 土日祝日", class: "table-data__input-field"
 
         .field
-          = form.submit "送信"
+          = form.submit "お店を登録", class: "restaurant-submit-btn"
 
