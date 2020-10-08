@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_08_023413) do
+ActiveRecord::Schema.define(version: 2020_10_08_064635) do
 
   create_table "cafe_restaurant_categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "cafe_restaurant_id", null: false
@@ -44,12 +44,12 @@ ActiveRecord::Schema.define(version: 2020_10_08_023413) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "restaurant_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "cafe_restaurant_id"
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
+    t.bigint "cafe_restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cafe_restaurant_id"], name: "index_restaurant_images_on_cafe_restaurant_id"
+    t.index ["cafe_restaurant_id"], name: "index_images_on_cafe_restaurant_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -54,6 +54,7 @@
           .restaurant-image__uploader
             = form.fields_for :images do |img|
               = img.file_field :image
+              
         %table.form-container__info-table
           %tr
             %th.table-holder お店の説明
