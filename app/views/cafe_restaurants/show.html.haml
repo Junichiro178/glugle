@@ -1,0 +1,29 @@
+%h2 レストラン詳細ページ
+.field
+  = @cafe_restaurant.name
+.field
+  = @cafe_restaurant.phonetic_name
+.field
+  = @cafe_restaurant.phone_number
+.field
+  = @cafe_restaurant.description
+.field
+  = @cafe_restaurant.opening_hours
+.field
+  = @cafe_restaurant.regular_holidays
+.field
+  = @cafe_restaurant.description
+.field
+  - @cafe_restaurant.categories.each do |category|
+    = category.name
+.field
+  = @prefecture.name
+  = @cafe_restaurant.city_ward
+  = @cafe_restaurant.block_number
+  = @cafe_restaurant.building_name
+.field
+  = @cafe_restaurant.building_name
+.field
+  = @cafe_restaurant.owner.username
+.field
+  = image_tag "#{@cafe_restaurant.images[0].image}", width: 400

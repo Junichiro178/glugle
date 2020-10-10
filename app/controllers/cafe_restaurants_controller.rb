@@ -10,10 +10,15 @@ class CafeRestaurantsController < ApplicationController
   def create
     @cafe_restaurant = CafeRestaurant.new(cafe_restaurant_params)
     if @cafe_restaurant.save
-      redirect_to root_path
+      redirect_to  cafe_restaurant_path(@cafe_restaurant)
     else
       redirect_to new_cafe_restaurant_path, alert: "お店を登録できませんでした"
     end
+  end
+
+  def show
+    @cafe_restaurant = CafeRestaurant.includes(:images).find(params[:id])
+    @prefecture = Prefecture.find(@cafe_restaurant.prefecture_id)
   end
 
   private
