@@ -72,9 +72,11 @@
               display: flex;
               .js-file {
                 line-height: 70px;
+                width: 300px;
               }
               .js-remove {
                 position: relative;
+                cursor: pointer;
                 span {
                   position: absolute;
                   top: 18px;
