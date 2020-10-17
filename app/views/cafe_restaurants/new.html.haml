@@ -56,7 +56,8 @@
               .js-file_group{"data-index" => "#{image.index}"} 
                 = image.file_field :image, class: "js-file"
                 %br/
-                .js-remove 削除
+                .js-remove 
+                  %span 削除
               
         %table.form-container__info-table
           %tr

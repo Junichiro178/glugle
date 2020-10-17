@@ -2,7 +2,9 @@ document.addEventListener("turbolinks:load", function(){
   const buildFileField = (index)=> {
     const html = `<div data-index="${index}" class="js-file_group">
                     <input class="js-file" type="file" name="cafe_restaurant[images_attributes][${index}][image]" id="cafe_restaurant_images_attributes_${index}_image">
-                    <div class="js-remove">削除</div>
+                    <div class="js-remove">
+                      <span>削除</span>
+                    </div>
                   </div>`;
     return html;
   }

@@ -26,4 +26,5 @@
 .field
   = @cafe_restaurant.owner.username
 .field
-  = image_tag "#{@cafe_restaurant.images[0].image}", width: 400
+  - @cafe_restaurant.images.each do |image|
+    = image_tag image.image.url, width: 200
