@@ -9,22 +9,33 @@ document.addEventListener("turbolinks:load", function(){
 
   let fileIndex = [1,2,3,4,5,6,7,8,9,10];
 
-  let imageBox = document.getElementById('image-box');
-  let upLoader = document.querySelector('.js-file');
-    // removeBtn = imageBox.querySelector('.js-remove');
-  
-  upLoader.addEventListener("change" ,function(e){
-    if (e.target.className ==='js-file') {
-      imageBox.insertAdjacentHTML('beforeend', buildFileField(fileIndex[0]));
-      fileIndex.shift();
-      fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-    } 
+  $('#image-box').on('change', '.js-file', function(e) {
+    $('#image-box').append(buildFileField(fileIndex[0]));
+    fileIndex.shift();
+    fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
   });
 
-  console.log(document.querySelector('.js-file'));
-  // removeBtn.addEventListener("click", function(){
-  //   this.parent.remove();
-  //   console.log("success");
+  $('#image-box').on('click', '.js-remove', function() {
+    $(this).parent().remove();
+    if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
+  });
+
+  // let imageBox = document.getElementById('image-box');
+  // let upLoader = document.querySelector('.js-file');
+  //   // removeBtn = imageBox.querySelector('.js-remove');
+  
+  // upLoader.addEventListener("change" ,function(e){
+  //   if (e.target.className ==='js-file') {
+  //     imageBox.insertAdjacentHTML('beforeend', buildFileField(fileIndex[0]));
+  //     fileIndex.shift();
+  //     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
+  //   } 
   // });
+
+  // console.log(document.querySelector('.js-file'));
+  // // removeBtn.addEventListener("click", function(){
+  // //   this.parent.remove();
+  // //   console.log("success");
+  // // });
 
 })
