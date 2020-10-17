@@ -1,30 +1,37 @@
-%h2 レストラン詳細ページ
-.field
-  = @cafe_restaurant.name
-.field
-  = @cafe_restaurant.phonetic_name
-.field
-  = @cafe_restaurant.phone_number
-.field
-  = @cafe_restaurant.description
-.field
-  = @cafe_restaurant.opening_hours
-.field
-  = @cafe_restaurant.regular_holidays
-.field
-  = @cafe_restaurant.description
-.field
-  - @cafe_restaurant.categories.each do |category|
-    = category.name
-.field
-  = @prefecture.name
-  = @cafe_restaurant.city_ward
-  = @cafe_restaurant.block_number
-  = @cafe_restaurant.building_name
-.field
-  = @cafe_restaurant.building_name
-.field
-  = @cafe_restaurant.owner.username
-.field
-  - @cafe_restaurant.images.each do |image|
-    = image_tag image.image.url, width: 200
+%section.header
+
+.restaurant-details
+  .restaurant-details__contents 
+
+
+
+-# %h2 レストラン詳細ページ
+-# .field
+-#   = @cafe_restaurant.name
+-# .field
+-#   = @cafe_restaurant.phonetic_name
+-# .field
+-#   = @cafe_restaurant.phone_number
+-# .field
+-#   = @cafe_restaurant.description
+-# .field
+-#   = @cafe_restaurant.opening_hours
+-# .field
+-#   = @cafe_restaurant.regular_holidays
+-# .field
+-#   = @cafe_restaurant.description
+-# .field
+-#   - @cafe_restaurant.categories.each do |category|
+-#     = category.name
+-# .field
+-#   = @prefecture.name
+-#   = @cafe_restaurant.city_ward
+-#   = @cafe_restaurant.block_number
+-#   = @cafe_restaurant.building_name
+-# .field
+-#   = @cafe_restaurant.building_name
+-# .field
+-#   = @cafe_restaurant.owner.username
+-# .field
+-#   - @cafe_restaurant.images.each do |image|
+-#     = image_tag image.image.url, width: 200
