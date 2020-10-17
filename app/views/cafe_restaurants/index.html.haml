@@ -168,15 +168,19 @@
                 %h2.category-title オーガニック特集！
                 %p.category-about 健康に良いと話題のオーガニックを解説します！
       
-      - if user_signed_in?
-        %section.restaurant-registration
-          .restaurant-registration__contents
-            .restaurant-registration__contents__title
-              %h2 お店の新規登録はこちら!
-            .restaurant-registration__contents__form
-              %p お店がまだ登録されていないオーナーさんは、こちらから登録を行いましょう！
-              = link_to new_cafe_restaurant_path, class: "restaurant-registration-btn" do
-                %span 新しくお店を出店
+    - if user_signed_in?
+      %section.restaurant-registration
+        .restaurant-registration__contents
+          .restaurant-registration__contents__title
+            %h2.title レストラン新規登録
+          .restaurant-registration__contents__form
+            %p.text
+              お店の新規登録はこちら! 
+              %br/ 
+              お店がまだ登録されていないオーナーさんは、こちらから登録を行いましょう！
+            .restaurant-registration-btn
+              = link_to new_cafe_restaurant_path, class: "restaurant-registration-btn__submit" do
+                %span お店を出店
                 %i.fas.fa-store
 
 
