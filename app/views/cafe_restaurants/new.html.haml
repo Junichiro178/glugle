@@ -51,9 +51,12 @@
         %h3.form-container__info-title 詳細情報
         .image-uploader
           %h4.image-uploader__title お店の画像
-          .image-uploader__form
-            = form.fields_for :images do |img|
-              = img.file_field :image
+          #image-box.image-uploader__form
+            = form.fields_for :images do |image|
+              .js-file_group{"data-index" => "#{image.index}"} 
+                = image.file_field :image, class: "js-file"
+                %br/
+                .js-remove 削除
               
         %table.form-container__info-table
           %tr
