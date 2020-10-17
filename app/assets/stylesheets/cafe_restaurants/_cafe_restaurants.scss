@@ -195,6 +195,43 @@ $main-color: #aeea00;
       }
     }
   }
+  .restaurant-registration{
+    padding-bottom: 40px;
+    &__contents {
+      width: 940px;
+      margin: 0 auto;
+      padding-top: 30px;
+      &__title {
+        line-height: 50px;
+        border-top: 3px solid #cddc39;
+        border-bottom: 3px solid #cddc39;
+        .title {
+          font-weight: 600;
+        }
+      }
+      &__form {
+        margin-top: 30px;
+        .text {
+        }
+        .restaurant-registration-btn {
+          margin-top: 40px;
+          &__submit {
+            display: block;
+            width: 200px;
+            line-height: 50px;
+            margin: 0 auto;
+            text-align: center;
+            text-decoration: none;
+            color: #37474f;
+            background-color: $main-color;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 20px;
+          }
+        }
+      }
+    }
+  }
 }
 
 .footer {
