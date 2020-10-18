@@ -1,0 +1,99 @@
+= render "layouts/main_header"
+
+.restaurant-details
+  .restaurant-details__contents
+    %section.restaurant-details__contents__title
+      .restaurant-title
+        %h2.restaurant-name= @cafe_restaurant.name
+
+    %section.restaurant-details__contents__images
+      .restaurant-images
+        %ul.image-outer.slider
+          - @cafe_restaurant.images.each do |image|
+            %li= image_tag image.image.url, class: 'restaurant-image slide-itme'
+          
+        %ul.image-dots.thumbnail-list
+          - @cafe_restaurant.images.each do |image|
+            .image-dots__dot
+              = image_tag image.image.url, class: 'dot-inner thumbnail-item', width: 50
+
+    %section.restaurant-details__contents__info
+      .restaurant-info
+        .info-box
+          .restaurant-address
+            %i.fas.fa-map-marker-alt.map-icon
+            = @prefecture.name
+            = @cafe_restaurant.city_ward
+            = @cafe_restaurant.block_number
+            = @cafe_restaurant.building_name
+          .restaurant-phone-number
+            %i.fas.fa-phone.phone-icon
+            = @cafe_restaurant.phone_number
+          .restaurant-description
+            = @cafe_restaurant.description
+
+    %section.restaurant-details__contents__features
+      .features-contents
+        .features-contents__title
+          %i.fas.fa-hand-point-right.hand-icon
+          %span お店の特徴
+        .features-contents__categories
+          %ul.categories-list
+            - @cafe_restaurant.categories.each do |category|
+              %li.categories-list__box
+                = category.name
+
+    %section.restaurant-details__contents__oepning-hours
+      .oepning-hours__contents
+        .oepning-hours__contents__title
+          %i.far.fa-clock.clock-icon
+          %span.title-text 営業時間
+        %ul.oepning-hours__contents__list
+          %li.regular_holidays
+            = "定休日: [ #{@cafe_restaurant.regular_holidays} ]"
+          %li.oepning-hours
+            = "営業時間: [ #{@cafe_restaurant.opening_hours} ]"
+
+    %section.restaurant-details__contents__address
+      .address__contents
+        .address__contents__title
+          %i.fas.fa-map-marker-alt.map-icon
+          %span.title-text アクセス
+        .address__contents__address-info
+          = @prefecture.name
+          = @cafe_restaurant.city_ward
+          = @cafe_restaurant.block_number
+          = @cafe_restaurant.building_name
+
+= render "layouts/main_footer"
+
+-# %h2 レストラン詳細ページ
+-# .field
+-#   = @cafe_restaurant.name
+-# .field
+-#   = @cafe_restaurant.phonetic_name
+-# .field
+-#   = @cafe_restaurant.phone_number
+-# .field
+-#   = @cafe_restaurant.description
+-# .field
+-#   = @cafe_restaurant.opening_hours
+-# .field
+-#   = @cafe_restaurant.regular_holidays
+-# .field
+-#   = @cafe_restaurant.description
+-# .field
+-#   - @cafe_restaurant.categories.each do |category|
+-#     = category.name
+-# .field
+-#   = @prefecture.name
+-#   = @cafe_restaurant.city_ward
+-#   = @cafe_restaurant.block_number
+-#   = @cafe_restaurant.building_name
+-# .field
+-#   = @cafe_restaurant.building_name
+-# .field
+-#   = @cafe_restaurant.owner.username
+-# .field
+-#   - @cafe_restaurant.images.each do |image|
+-#     = image_tag image.image.url, width: 200

@@ -67,8 +67,28 @@
             border-bottom: 1px solid black;
           }
           &__form {
-            line-height: 70px;
             padding-left: 10px;
+            .js-file_group {
+              display: flex;
+              .js-file {
+                line-height: 70px;
+                width: 300px;
+              }
+              .js-remove {
+                position: relative;
+                cursor: pointer;
+                span {
+                  position: absolute;
+                  top: 18px;
+                  display: inline-block;
+                  width: 50px;
+                  text-align: center;
+                  background-color: #e0e0e0;
+                  padding: 5px;
+                  border-radius: 10px;
+                }
+              }
+            }
           }
         }
         .field {
