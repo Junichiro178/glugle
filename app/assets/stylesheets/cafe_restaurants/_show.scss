@@ -22,15 +22,27 @@ $background: #ffffff;
       background-color: $background;
       .restaurant-images {
         margin: 0 auto;
-        text-align: center;
-        width: 600px;
-        max-width: 600px;
-        max-height: 500px;
-        &__image {
-          max-width: 600px;
-          max-height: 500px;
+        width: 500px;
+        .image-outer {
+          background-color: #fafafa;
+          .restaurant-image {
+            width: 100%;
+            max-width: 500px;
+            max-height: 400px;
+            border-style: none;
+          }
+        }
+        .image-dots {
+          &__dot {
+            cursor: pointer;
+            .dot-inner {
+              width: 50px;
+              height: 50px;
+            }
+          }
         }
       }
+
     }
     &__info {
       padding-bottom: 30px;
@@ -38,7 +50,7 @@ $background: #ffffff;
       background-color: $background;
       .restaurant-info {
         margin: 0 auto;
-        width: 600px;
+        width: 500px;
         .info-box {
           padding: 0 20px 0;
           .restaurant-address {

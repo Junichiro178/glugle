@@ -12,7 +12,7 @@
       .restaurant-images
         %ul.image-outer.slider
           - @cafe_restaurant.images.each do |image|
-            %li= image_tag image.image.url, class: 'restaurant-image slide-itme', width: 200
+            %li= image_tag image.image.url, class: 'restaurant-image slide-itme'
           
         %ul.image-dots.thumbnail-list
           - @cafe_restaurant.images.each do |image|
