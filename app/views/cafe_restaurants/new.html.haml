@@ -1,3 +1,5 @@
+= render "layouts/main_header"
+
 .new-restaurant
   .new-restaurant__contents
     %h2.new-restaurant__contents__title レストラン新規登録
@@ -76,3 +78,4 @@
         .field
           = form.submit "お店を登録", class: "restaurant-submit-btn"
 
+= render "layouts/main_footer"

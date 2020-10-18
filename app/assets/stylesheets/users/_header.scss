@@ -1,11 +1,17 @@
 .header {
+  background-color: #f9fbe7;
   &__contents {
-    background-color: #f9fbe7;
-    .user-name {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 940px;
+    padding: 8px 2px;
+    &__left-box {
+    }
+    &__right-box {
       font-size: 16px;
       font-weight: bold;
-      margin-left: 50px;
-      line-height: 50px;
+      line-height: 60px;
     }
   }
 }
