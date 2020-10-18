@@ -11,5 +11,7 @@
 @import "users/user-mypage";
 @import "users/user-edit";
 @import "users/header";
-
+@import "slick/slick-common.scss";
+@import "slick/slick-theme.scss";
+@import "slick/slick.scss";
 $main-color: #aeea00;
