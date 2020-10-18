@@ -1,15 +1,13 @@
 .toppage-header {
   width: 100%;
-  background-color: #f9fbe7;
   padding: 8px 2px;
+  background-color: #f9fbe7;
   .header-inner {
     margin: 0 auto;
     width: 940px;
     display: flex;
     justify-content: space-between;
-    &__title {
-      font-size: 24px;
-      line-height: 50px;
+    &__left-box {
     }
     &__right-box {
       display: flex;

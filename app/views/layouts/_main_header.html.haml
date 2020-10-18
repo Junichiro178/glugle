@@ -1,6 +1,7 @@
 %header.toppage-header
   .header-inner
-    %h1.header-inner__title glugle
+    .header-inner__left-box
+      = image_tag 'glugle-logo.png', width: 78, height: 60
     .header-inner__right-box
       - if user_signed_in?
         .header-inner__right-box__likes
