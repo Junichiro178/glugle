@@ -1,57 +1,5 @@
 $main-color: #aeea00;
 
-.toppage-header {
-  width: 100%;
-  background-color: #f9fbe7;
-  padding: 8px 2px;
-  .header-inner {
-    margin: 0 auto;
-    width: 940px;
-    display: flex;
-    justify-content: space-between;
-    &__title {
-      font-size: 24px;
-      line-height: 50px;
-    }
-    &__right-box {
-      display: flex;
-      line-height: 50px;
-      &__logout {
-        .logout-btn {
-          text-decoration: none;
-          color: black;
-        }
-      }
-      &__login {
-        margin-right: 15px;
-        .login-btn {
-          text-decoration: none;
-          color: black;
-        }
-      }
-      &__registration {
-        .registration-btn {
-          text-decoration: none;
-          color: black;
-        }
-      }
-      &__likes{
-        margin-right: 15px;
-        .likes-link {
-          text-decoration: none;
-          color: black;
-        }
-      }
-      &__mypage {
-        margin-right: 15px;
-        .mypage-link {
-          text-decoration: none;
-          color: black;
-        }
-      }
-    }
-  }
-}
 .top-main {
   width: 100%;
   .swiper-container {
@@ -197,14 +145,4 @@ $main-color: #aeea00;
   }
 }
 
-.footer {
-  width: 100;
-  background-color: #f0f0f0;
-  text-align: center;
-  .glugle {
-    line-height: 200px;
-    font-size: 20px;
-    font-weight: bold;
-  }
-}
 
