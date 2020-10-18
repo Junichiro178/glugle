@@ -7,8 +7,6 @@
         %h2.restaurant-name= @cafe_restaurant.name
 
     %section.restaurant-details__contents__images
-      -# .restaurant-images
-      -#   = image_tag "#{@cafe_restaurant.images[0].image}",class: "restaurant-images__image"
       .restaurant-images
         %ul.image-outer.slider
           - @cafe_restaurant.images.each do |image|
