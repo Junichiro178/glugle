@@ -45,8 +45,8 @@ $background: #ffffff;
 
     }
     &__info {
-      padding-bottom: 30px;
       padding-top: 30px;
+      padding-bottom: 30px;
       background-color: $background;
       .restaurant-info {
         margin: 0 auto;
@@ -73,7 +73,7 @@ $background: #ffffff;
     &__features {
       margin-top: 20px;
       padding-top: 20px;
-      padding-bottom: 20px;
+      padding-bottom: 40px;
       background-color: $background;
       .features-contents {
         margin: 0 auto;
