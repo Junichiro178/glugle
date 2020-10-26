@@ -14,4 +14,9 @@ class CafeRestaurant < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
+  def self.search(search)
+    return CafeRestaurant.all unless search
+    CafeRestaurant.where('name LIKE(?)', "%#{search}%")
+  end
+
 end

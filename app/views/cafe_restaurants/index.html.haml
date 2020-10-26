@@ -8,11 +8,13 @@
     .search-form
       .search-form__contents
         .search-box
-          %form.search-box__form
+          = form_with(url: search_cafe_restaurants_path, local: true, method: :get, class: "search-box__form") do |form|
             %input{placeholder: "キーワード", class: "search-box__form__input"}
             %input{placeholder: "エリア", class: "search-box__form__input"}
-            %input{placeholder: "カテゴリー", class: "search-box__form__input"}
-            %button.search-box__form__submitBtn 検索
+            -# %input{placeholder: "カテゴリー", class: "search-box__form__input"}
+            -# = form.text_field :keyword, placeholder: "カテゴリー", class: "search-box__form__input"
+            = select_tag :category_id, options_from_collection_for_select(Category.all, :id, :name, params[:category_id]), prompt: 'カテゴリーで絞り込み', class: 'search-box__form__input'
+            = form.submit "検索", class: "search-box__form__submitBtn"
     
     %section.border
 

@@ -1,0 +1,4 @@
+- @cafe_restaurants.each do |rst|
+  = rst.name
+  - rst.images.each do |image|
+    %li= image_tag image.image.url, class: 'restaurant-image slide-itme', width: 400

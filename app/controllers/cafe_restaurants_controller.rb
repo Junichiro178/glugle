@@ -21,6 +21,13 @@ class CafeRestaurantsController < ApplicationController
     @prefecture = Prefecture.find(@cafe_restaurant.prefecture_id)
   end
 
+  def search
+    @cafe_restaurants = CafeRestaurant.search(params[:category_id])
+    @cafe_restaurants = params[:category_id].present? ? Category.find(params[:category_id]).cafe_restaurants : CafeRestaurant.all
+    # @cafe_restaurants = CafeRestaurant.search(params[:category_id])
+
+  end
+
   private
 
   def cafe_restaurant_params
