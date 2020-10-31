@@ -10,40 +10,7 @@ $main-color: #aeea00;
       line-height: 300px;
     }
   }
-  
-  .search-form {
-    box-shadow: 0 0 8px 0 rgba(0,0,0,.2);
-    &__contents {
-      width: 500px;
-      margin: 0 auto;
-      padding: 20px;
-      .search-box {
-        width: 100%;
-        &__form {
-          display: flex;
-          align-items: center;
-          &__input {
-            width: 60%;
-            height: 50px;
-            padding-left: 5px;
-            margin-right: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-          }
-          &__submitBtn {
-            background-color: $main-color;
-            color: #37474f;
-            font-size: 15px;
-            font-weight: bold;
-            margin-left: 5px;
-            line-height: 50px;
-            width: 40%;
-            border-radius: 5px;
-          }
-        }
-      }
-    }
-  }
+
   .border {
     background-color:  #f0f0f0;
     height: 30px;

@@ -1,4 +1,12 @@
+= render "layouts/main_header"
+
+%section.search-form
+  = render "layouts/search_form"
+
 - @cafe_restaurants.each do |rst|
   = rst.name
   - rst.images.each do |image|
-    %li= image_tag image.image.url, class: 'restaurant-image slide-itme', width: 400
+    %li
+      = image_tag image.image.url, class: 'restaurant-image slide-itme', width: 400
+
+= render "layouts/main_footer"
