@@ -3,10 +3,36 @@
 %section.search-form
   = render "layouts/search_form"
 
-- @cafe_restaurants.each do |rst|
-  = rst.name
-  - rst.images.each do |image|
-    %li
-      = image_tag image.image.url, class: 'restaurant-image slide-itme', width: 400
+%section.category-search-result
+  .category-search-result__contents
+    .category-search-result__contents__title
+      %h2= "#{@category.name}の検索結果"
+    .category-search-result__contents__count
+    .category-search-result__contents__list
+      %ul.restaurants-list
+        - @cafe_restaurants.each do |rst|
+          = link_to cafe_restaurant_path(rst.id) do
+            %li.restaurants-list__item
+              .restaurants-list__item__image
+                = image_tag "#{rst.images[0].image}", class: "rst-image", width: 200
+              .restaurants-list__item__info
+                .restaurant-name
+                  = rst.name
+                .restaurant-category
+                  - rst.categories.each do |category|
+                    = category.name
+                .restaurant-address
+                  = rst.prefecture.name
+                  = rst.city_ward
+                  = rst.block_number
+                .restaurant-openinghours
+                  = "[#{rst.regular_holidays}]"
+                  = rst.opening_hours
+
+-# - @cafe_restaurants.each do |rst|
+-#   = rst.name
+-#   - rst.images.each do |image|
+-#     %li
+-#       = image_tag image.image.url, class: 'restaurant-image slide-itme', width: 400
 
 = render "layouts/main_footer"
