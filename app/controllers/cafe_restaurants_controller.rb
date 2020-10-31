@@ -24,10 +24,8 @@ class CafeRestaurantsController < ApplicationController
   end
 
   def search
-    @cafe_restaurants = CafeRestaurant.search(params[:category_id])
-    @cafe_restaurants = params[:category_id].present? ? Category.find(params[:category_id]).cafe_restaurants : CafeRestaurant.all
-    # @cafe_restaurants = CafeRestaurant.search(params[:category_id])
-
+    @category = Category.find(params[:category_id])
+    @cafe_restaurants = params[:category_id].present? ? Category.find(params[:category_id]).cafe_restaurants: CafeRestaurant.all
   end
 
   private
