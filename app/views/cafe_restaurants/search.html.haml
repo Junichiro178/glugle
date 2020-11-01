@@ -6,8 +6,12 @@
 %section.category-search-result
   .category-search-result__contents
     .category-search-result__contents__title
-      %h2= "#{@category.name}の検索結果"
+      - if @category.presence
+        %h2= "#{@category.name}の検索結果"
+      - else
+        %h2= "検索結果"
     .category-search-result__contents__count
+      %h3= "全#{ @cafe_restaurants.length}件(1〜20件)"
     .category-search-result__contents__list
       %ul.restaurants-list
         - @cafe_restaurants.each do |rst|
@@ -19,8 +23,10 @@
                 .restaurant-name
                   = rst.name
                 .restaurant-category
-                  - rst.categories.each do |category|
-                    = category.name
+                  %ul.category-list
+                    - rst.categories.each do |category|
+                      %li.category-list_item
+                        = category.name
                 .restaurant-address
                   = rst.prefecture.name
                   = rst.city_ward
