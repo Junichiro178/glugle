@@ -1,3 +1,27 @@
 .search-form {
   margin-top: 10px;
 }
+
+.category-search-result {
+  &__contents{
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 940px;
+    &__title {
+      font-size: 20px;
+      line-height: 50px;
+    }
+    &__count {
+      font-size: 20px;
+      line-height: 50px;
+      margin-bottom: 30px;
+    }
+    &__list {
+      .restaurants-list {
+        &__item{
+          display: flex;
+        }
+      }
+    }
+  }
+}
