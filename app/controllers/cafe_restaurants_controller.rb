@@ -24,7 +24,9 @@ class CafeRestaurantsController < ApplicationController
   end
 
   def search
-    @category = Category.find(params[:category_id])
+    if params[:category_id].presence
+      @category = Category.find(params[:category_id])
+    end
     @cafe_restaurants = params[:category_id].present? ? Category.find(params[:category_id]).cafe_restaurants: CafeRestaurant.all
   end
 
