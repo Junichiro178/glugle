@@ -15,17 +15,17 @@
     .category-search-result__contents__list
       %ul.restaurants-list
         - @cafe_restaurants.each do |rst|
-          = link_to cafe_restaurant_path(rst.id) do
-            %li.restaurants-list__item
-              .restaurants-list__item__image
+          = link_to cafe_restaurant_path(rst.id), class: "rst-link" do
+            %li.restaurants-list-item
+              .restaurants-list-item__image
                 = image_tag "#{rst.images[0].image}", class: "rst-image", width: 200
-              .restaurants-list__item__info
+              .restaurants-list-item__info
                 .restaurant-name
                   = rst.name
                 .restaurant-category
                   %ul.category-list
                     - rst.categories.each do |category|
-                      %li.category-list_item
+                      %li.category-list__item
                         = category.name
                 .restaurant-address
                   = rst.prefecture.name
@@ -34,11 +34,5 @@
                 .restaurant-openinghours
                   = "[#{rst.regular_holidays}]"
                   = rst.opening_hours
-
--# - @cafe_restaurants.each do |rst|
--#   = rst.name
--#   - rst.images.each do |image|
--#     %li
--#       = image_tag image.image.url, class: 'restaurant-image slide-itme', width: 400
 
 = render "layouts/main_footer"
