@@ -28,10 +28,12 @@
                       %li.category-list__item
                         = category.name
                 .restaurant-address
+                  %i.fas.fa-map-marker-alt.map-icon
                   = rst.prefecture.name
                   = rst.city_ward
                   = rst.block_number
                 .restaurant-openinghours
+                  %i.far.fa-clock.clock-icon
                   = "[#{rst.regular_holidays}]"
                   = rst.opening_hours
 
