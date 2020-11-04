@@ -11,7 +11,8 @@
       - else
         %h2= "検索結果"
     .category-search-result__contents__count
-      %h3= "全#{ @cafe_restaurants.length}件(1〜20件)"
+      %h3= "全#{ @cafe_restaurants.length}件"
+      -# ここに全部で何件という表記を入れる予定
     .category-search-result__contents__list
       %ul.restaurants-list
         - @cafe_restaurants.each do |rst|
