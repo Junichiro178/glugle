@@ -6,8 +6,13 @@ $main-color: #aeea00;
     height: 300px;
     background-color: $main-color;
     text-align: center;
-    h1{
-      line-height: 300px;
+    display: flex;
+    align-items: center;
+    &__title{
+      margin: 0 auto;
+      width: 600px;
+      font-size: 40px;
+      font-weight: bold;
     }
   }
 
