@@ -1,4 +1,6 @@
 class CafeRestaurantsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :edit]
+
   def index
   end
 
@@ -19,6 +21,13 @@ class CafeRestaurantsController < ApplicationController
   def show
     @cafe_restaurant = CafeRestaurant.includes(:images).find(params[:id])
     @prefecture = Prefecture.find(@cafe_restaurant.prefecture_id)
+  end
+
+  def search
+    if params[:category_id].presence
+      @category = Category.find(params[:category_id])
+    end
+    @cafe_restaurants = params[:category_id].present? ? Category.find(params[:category_id]).cafe_restaurants: CafeRestaurant.all
   end
 
   private

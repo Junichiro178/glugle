@@ -3,18 +3,31 @@
 %main.top-main
   .top-main__contents
     .swiper-container
-      %h1 ここにスライドショーが入る予定
+      .swiper-container__title 
+        %span Enjoy 
+        %br
+        Glutenfree, Vegan, Organic 
+        %br
+        LIFE
+        
 
-    .search-form
-      .search-form__contents
-        .search-box
-          %form.search-box__form
-            %input{placeholder: "キーワード", class: "search-box__form__input"}
-            %input{placeholder: "エリア", class: "search-box__form__input"}
-            %input{placeholder: "カテゴリー", class: "search-box__form__input"}
-            %button.search-box__form__submitBtn 検索
-    
+    = render "layouts/search_form"
+
     %section.border
+    
+    %section.restaurant-registration
+      .restaurant-registration__contents
+        .restaurant-registration__contents__title
+          %h2.title レストラン新規登録
+        .restaurant-registration__contents__form
+          %p.text
+            お店の新規登録はこちら! 
+            %br/ 
+            お店がまだ登録されていないオーナーさんは、こちらから登録を行いましょう！
+          .restaurant-registration-btn
+            = link_to new_cafe_restaurant_path, class: "restaurant-registration-btn__submit" do
+              %span お店を出店
+              %i.fas.fa-store
 
     %section.history-log
       .history-log__contents
@@ -104,31 +117,6 @@
     %section.p-article.category-recommendation
       .category-recommendation__contents
         .category-recommendation__contents__title
-          %h2 人気の条件・こだわり
-        .category-container
-          %ul.category-list
-            %li.category-list__item
-              .category-list__item__image.first-image
-                = image_tag "FishMoose.jpg", class: "category-first-image"
-              .category-list__item__description
-                %h2.category-title 個室
-                %p.category-about 個室でゆったりと過ごせます！少人数で密にならずに楽しく会話できます！
-            %li.category-list__item
-              .category-list__item__image
-                = image_tag "vegan-salad.jpg", class: "category-image"
-              .category-list__item__description
-                %h2.category-title テイクアウトOK
-                %p.category-about ソーシャルディスタンスを気にせず、持ち帰りできます！
-            %li.category-list__item
-              .category-list__item__image
-                = image_tag "organic-latte.jpg", class: "category-image"
-              .category-list__item__description
-                %h2.category-title 飲み放題
-                %p.category-about お酒も楽しみたい人には最適！どんなドリンクも用意します！
-
-    %section.p-contents.category-recommendation
-      .category-recommendation__contents
-        .category-recommendation__contents__title
           %h2 おすすめ特集
         .category-container
           %ul.category-list
@@ -150,21 +138,6 @@
               .category-list__item__description
                 %h2.category-title オーガニック特集！
                 %p.category-about 健康に良いと話題のオーガニックを解説します！
-      
-    - if user_signed_in?
-      %section.restaurant-registration
-        .restaurant-registration__contents
-          .restaurant-registration__contents__title
-            %h2.title レストラン新規登録
-          .restaurant-registration__contents__form
-            %p.text
-              お店の新規登録はこちら! 
-              %br/ 
-              お店がまだ登録されていないオーナーさんは、こちらから登録を行いましょう！
-            .restaurant-registration-btn
-              = link_to new_cafe_restaurant_path, class: "restaurant-registration-btn__submit" do
-                %span お店を出店
-                %i.fas.fa-store
 
 = render "layouts/main_footer"
 
