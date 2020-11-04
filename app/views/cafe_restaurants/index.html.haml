@@ -3,11 +3,31 @@
 %main.top-main
   .top-main__contents
     .swiper-container
-      %h1 ここにスライドショーが入る予定
+      .swiper-container__title 
+        %span Enjoy 
+        %br
+        Glutenfree Vegan Organic 
+        %br
+        LIFE
+        
 
     = render "layouts/search_form"
 
     %section.border
+    
+    %section.restaurant-registration
+      .restaurant-registration__contents
+        .restaurant-registration__contents__title
+          %h2.title レストラン新規登録
+        .restaurant-registration__contents__form
+          %p.text
+            お店の新規登録はこちら! 
+            %br/ 
+            お店がまだ登録されていないオーナーさんは、こちらから登録を行いましょう！
+          .restaurant-registration-btn
+            = link_to new_cafe_restaurant_path, class: "restaurant-registration-btn__submit" do
+              %span お店を出店
+              %i.fas.fa-store
 
     %section.history-log
       .history-log__contents
@@ -118,20 +138,6 @@
               .category-list__item__description
                 %h2.category-title オーガニック特集！
                 %p.category-about 健康に良いと話題のオーガニックを解説します！
-
-    %section.restaurant-registration
-      .restaurant-registration__contents
-        .restaurant-registration__contents__title
-          %h2.title レストラン新規登録
-        .restaurant-registration__contents__form
-          %p.text
-            お店の新規登録はこちら! 
-            %br/ 
-            お店がまだ登録されていないオーナーさんは、こちらから登録を行いましょう！
-          .restaurant-registration-btn
-            = link_to new_cafe_restaurant_path, class: "restaurant-registration-btn__submit" do
-              %span お店を出店
-              %i.fas.fa-store
 
 = render "layouts/main_footer"
 
