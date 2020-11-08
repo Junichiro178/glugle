@@ -1,4 +1,4 @@
-![glugle-logo](https://user-images.githubusercontent.com/66509126/98461877-3252f880-21f3-11eb-869d-c9607f8ffd3f.png)
+<div align="center" >![glugle-logo](https://user-images.githubusercontent.com/66509126/98461877-3252f880-21f3-11eb-869d-c9607f8ffd3f.png)</div width="400px;">
 
 <h2 align="center">グルテンフリーレストラン専用検索アプリ <br/>【glugle(ぐるぐる)】</h2>
 
