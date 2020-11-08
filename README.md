@@ -1,6 +1,6 @@
 ![glugle-logo](https://user-images.githubusercontent.com/66509126/98461877-3252f880-21f3-11eb-869d-c9607f8ffd3f.png)
 
-
+<h2 align="center">グルテンフリーレストラン専用検索アプリ【glugle(ぐるぐる】</h2>
 
 ## DB設計
 ## Usersテーブル
