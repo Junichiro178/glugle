@@ -1,6 +1,6 @@
 <!-- <div align="center" >![glugle-logo](https://user-images.githubusercontent.com/66509126/98461877-3252f880-21f3-11eb-869d-c9607f8ffd3f.png)</div width="400px;"> -->
 
-<div align="center" ><img src="https://user-images.githubusercontent.com/66509126/98461877-3252f880-21f3-11eb-869d-c9607f8ffd3f.png" width="400px;" /></div>
+<div align="center" ><img src="https://user-images.githubusercontent.com/66509126/98461877-3252f880-21f3-11eb-869d-c9607f8ffd3f.png" width="200px;" /></div>
 
 
 
