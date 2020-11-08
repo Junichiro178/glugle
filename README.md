@@ -1,7 +1,9 @@
 ![glugle-logo](https://user-images.githubusercontent.com/66509126/98461877-3252f880-21f3-11eb-869d-c9607f8ffd3f.png)
 
-# DB design
-## Users table
+
+
+## DB設計
+## Usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_name|string|null: false|
@@ -13,7 +15,7 @@
 - has_many :likes, dependent: :destroy
 - has_many :reviews, dependent: :destroy
 
-## Reviews table
+## Reviewsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
@@ -25,7 +27,7 @@
 - belongs_to :user
 - belongs_to :restaurant-cafe
 
-## Likes table
+## Likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
@@ -34,7 +36,7 @@
 - belongs_to :user
 - belongs_to :restaurant-cafe
 
-## Restaurants-Cafes table
+## Restaurants-Cafesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -60,7 +62,7 @@
 - has_many :tags, through: :tags_restaurants-cafes
 - belongs_to :owner, class_name: 'User', foreign_key: 'owner_id'
 
-## store_categories_stores table
+## store_categories_storesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |store_id|references|null: false, foreign_key: true|
@@ -69,7 +71,7 @@
 - belongs_to :restaurant-cafe
 - belongs_to :store_category
 
-## store_categories table
+## store_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -86,7 +88,7 @@
 - belongs_to :restaurant-cafe
 - belongs_to :tags
 
-## tags(features) table
+## tags(features)テーブル
 |Column|Type|Options|
 |------|----|-------|
 |content|string|null: false|
@@ -94,7 +96,7 @@
 - has_many :tags_stores
 - has_many :restaurants-cafes, through: :tags_stores
 
-## Images table
+## Imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |image|text|null: false|
@@ -102,7 +104,7 @@
 ### Association
 - belongs_to :restaurant-cafe
 
-## menus table
+## menusテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
@@ -115,7 +117,7 @@
 - has_many :menu-categories, through: :menu-categories_menus
 - belongs_to :restaurant-cafe
 
-## menu-categories_menus table
+## menu-categories_menusテーブル
 |Column|Type|Options|
 |------|----|-------|
 |menu_id|references|null: false, foreign_key: true|
@@ -124,7 +126,7 @@
 - belongs_to :menu
 - belongs_to :menu_category
 
-## menu_categories table
+## menu_categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
