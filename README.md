@@ -86,7 +86,7 @@
 - belongs_to :user
 - belongs_to :restaurant-cafe
 
-## Restaurants-Cafesテーブル
+## Cafe_restaurantsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
