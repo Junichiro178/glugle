@@ -4,8 +4,8 @@ class CreateMenus < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.integer :price, null: false
       t.string :image, null: false
-      t.string :description, null: false
-      t.references :cafe_restaurant
+      t.string :description
+      t.references :cafe_restaurant, null: false
       t.timestamps
     end
   end
