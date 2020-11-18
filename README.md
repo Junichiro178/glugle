@@ -9,7 +9,14 @@
 <br/>
 
 ## 使用技術
-- Ruby, Rails
+- Ruby 
+- Ruby on Rails
+- Javascript
+- jQuery
+- slick
+- sass
+- haml
+- AWS(EC2,S3)
 
 ## 🌐 アプリケーション URL
 ### http://18.180.51.7/
