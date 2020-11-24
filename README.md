@@ -9,6 +9,7 @@
 <br/>
 
 ## 使用技術
+- HTML
 - Ruby 
 - Ruby on Rails
 - Javascript
