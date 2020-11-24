@@ -10,6 +10,7 @@
 
 ## 使用技術
 - HTML
+- CSS
 - Ruby 
 - Ruby on Rails
 - Javascript
