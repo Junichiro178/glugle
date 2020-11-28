@@ -37,10 +37,4 @@ document.addEventListener("turbolinks:load", function(){
   //   } 
   // });
 
-  // console.log(document.querySelector('.js-file'));
-  // // removeBtn.addEventListener("click", function(){
-  // //   this.parent.remove();
-  // //   console.log("success");
-  // // });
-
 })
