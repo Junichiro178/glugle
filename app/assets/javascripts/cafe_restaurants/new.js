@@ -25,9 +25,4 @@ document.addEventListener("turbolinks:load", function(){
     if ($('.js-file').length == 0) $('#image-box').append(buildFileField(fileIndex[0]));
   });
 
-  // let imageBox = document.getElementById('image-box');
-  // let upLoader = document.querySelector('.js-file');
-  //   // removeBtn = imageBox.querySelector('.js-remove');
-  
-
 })
