@@ -29,12 +29,5 @@ document.addEventListener("turbolinks:load", function(){
   // let upLoader = document.querySelector('.js-file');
   //   // removeBtn = imageBox.querySelector('.js-remove');
   
-  // upLoader.addEventListener("change" ,function(e){
-  //   if (e.target.className ==='js-file') {
-  //     imageBox.insertAdjacentHTML('beforeend', buildFileField(fileIndex[0]));
-  //     fileIndex.shift();
-  //     fileIndex.push(fileIndex[fileIndex.length - 1] + 1)
-  //   } 
-  // });
 
 })
