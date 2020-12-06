@@ -23,3 +23,32 @@ Category.create!(
 Category.create!(
   name: 'その他'
 )
+
+MenuCategory.create!(
+  [
+    {
+      name: 'グルテンフリー'
+    },
+    {
+      name: 'ヴィーガン'
+    },
+    {
+      name: 'オーガニック'
+    },
+    {
+      name: '腸内環境'
+    },
+    {
+      name: 'エシカル食品'
+    },
+    {
+      name: 'アーユルヴェーダ'
+    },
+    {
+      name: 'サステナブルビューティー'
+    },
+    {
+      name: 'その他'
+    }
+  ]
+)
