@@ -11,6 +11,9 @@ class CafeRestaurant < ApplicationRecord
   belongs_to :owner, class_name: 'User', foreign_key: 'owner_id'
   validates :images, :name, :phonetic_name, :phone_number, :description, :opening_hours, :regular_holidays, :prefecture_id, :city_ward, :block_number, presence: true
 
+  #メニュー昨日
+  has_many :menus
+
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :prefecture
 
