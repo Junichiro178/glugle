@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :show]
 
   resources :cafe_restaurants do
-    resources :menus, only: [:create]
+    resources :menus, only: [:create, :new]
     collection do
       get 'search'
     end

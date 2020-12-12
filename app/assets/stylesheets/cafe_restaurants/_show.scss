@@ -2,169 +2,237 @@ $main-color: #aeea00;
 $text-color: #37474f;
 $background: #ffffff;
 
-.restaurant-details {
-  background-color: #fafafa;
-  &__contents {
-    width: 940px;
-    margin: 0 auto;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    &__title {
-      line-height: 100px;
-      text-align: center;
-      background-color: $background;
-      .restaurant-name {
-        font-size: 24px;
-        font-weight: 700;
-      }
-    }
-    &__images {
-      background-color: $background;
-      .restaurant-images {
+.tab-content {
+  &__item {
+    .restaurant-details {
+      background-color: #fafafa;
+      &__contents {
+        width: 940px;
         margin: 0 auto;
-        width: 500px;
-        .image-outer {
-          background-color: #fafafa;
-          .restaurant-image {
-            width: 100%;
-            max-width: 500px;
-            max-height: 400px;
-            border-style: none;
-            border-radius: 10px;
-          }
-        }
-        .image-dots {
-          &__dot {
-            cursor: pointer;
-            .dot-inner {
-              width: 50px;
-              height: 50px;
-              border-radius: 5px;
-            }
-          }
-        }
-      }
-
-    }
-    &__info {
-      padding-top: 30px;
-      padding-bottom: 30px;
-      background-color: $background;
-      .restaurant-info {
-        margin: 0 auto;
-        width: 500px;
-        .info-box {
-          padding: 0 20px 0;
-          .restaurant-address {
-            margin-bottom: 10px;
-            .map-icon {
-              color: $main-color;
-            }
-          }
-          .restaurant-phone-number {
-            .phone-icon {
-              color: $main-color;
-            }
-          }
-          .restaurant-description {
-            white-space: pre-wrap;
-          }
-        }
-      }
-    }
-    &__features {
-      margin-top: 20px;
-      padding-top: 20px;
-      padding-bottom: 40px;
-      background-color: $background;
-      .features-contents {
-        margin: 0 auto;
-        width: 600px;
+        padding-top: 30px;
+        padding-bottom: 30px;
         &__title {
-          line-height: 50px;
+          line-height: 100px;
           text-align: center;
-          font-size: 24px;
-          font-weight: 600;
-          margin-bottom: 20px;
-          .hand-icon {
-            font-size: 30px;
-            color: $main-color;
+          background-color: $background;
+          .restaurant-name {
+            font-size: 24px;
+            font-weight: 700;
           }
         }
-        &__categories {
-          .categories-list{
+        &__images {
+          background-color: $background;
+          .restaurant-images {
+            margin: 0 auto;
+            width: 500px;
+            .image-outer {
+              background-color: #fafafa;
+              .restaurant-image {
+                width: 100%;
+                max-width: 500px;
+                max-height: 400px;
+                border-style: none;
+                border-radius: 10px;
+              }
+            }
+            .image-dots {
+              &__dot {
+                cursor: pointer;
+                .dot-inner {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 5px;
+                }
+              }
+            }
+          }
+    
+        }
+        &__info {
+          padding-top: 30px;
+          padding-bottom: 30px;
+          background-color: $background;
+          .restaurant-info {
+            margin: 0 auto;
+            width: 500px;
+            .info-box {
+              padding: 0 20px 0;
+              .restaurant-address {
+                margin-bottom: 10px;
+                .map-icon {
+                  color: $main-color;
+                }
+              }
+              .restaurant-phone-number {
+                .phone-icon {
+                  color: $main-color;
+                }
+              }
+              .restaurant-description {
+                white-space: pre-wrap;
+              }
+            }
+          }
+        }
+        &__features {
+          margin-top: 20px;
+          padding-top: 20px;
+          padding-bottom: 40px;
+          background-color: $background;
+          .features-contents {
+            margin: 0 auto;
+            width: 600px;
+            &__title {
+              line-height: 50px;
+              text-align: center;
+              font-size: 24px;
+              font-weight: 600;
+              margin-bottom: 20px;
+              .hand-icon {
+                font-size: 30px;
+                color: $main-color;
+              }
+            }
+            &__categories {
+              .categories-list{
+                margin: 0 auto;
+                width: 400px;
+                &__box {
+                  margin: 0 auto;
+                  text-align: center;
+                  border-radius: 10px;
+                  font-size: 15px;
+                  font-weight: 600;
+                  width: 400px;
+                  line-height: 40px;
+                  margin: 0 5px 5px 0 ;
+                  color: $text-color;
+                  background-color: $main-color;
+                }
+              }
+            }
+          }
+        }
+        &__oepning-hours {
+          margin-top: 20px;
+          padding-top: 20px;
+          padding-bottom: 50px;
+          background-color: $background;
+          .oepning-hours__contents {
             margin: 0 auto;
             width: 400px;
-            &__box {
-              margin: 0 auto;
+            &__title {
+              line-height: 50px;
               text-align: center;
-              border-radius: 10px;
-              font-size: 15px;
+              font-size: 20px;
               font-weight: 600;
-              width: 400px;
-              line-height: 40px;
-              margin: 0 5px 5px 0 ;
-              color: $text-color;
-              background-color: $main-color;
+              margin-bottom: 20px;
+              .clock-icon {
+                color: $text-color;
+              }
+              .title-text {
+              }
+            }
+            &__list {
+              font-size: 20px;
+              .regular_holidays {
+                margin-bottom: 10px;
+              }
+              .oepning-hours {
+              }
+            }
+          }
+        }
+        &__address {
+          margin-top: 20px;
+          padding-top: 20px;
+          padding-bottom: 50px;
+          background-color: $background;
+          .address__contents {
+            margin: 0 auto;
+            width: 400px;
+            &__title {
+              line-height: 50px;
+              text-align: center;
+              font-size: 20px;
+              font-weight: 600;
+              margin-bottom: 20px;
+              .map-icon {
+                color: $text-color;
+              }
+              .title-text {
+              }
+            }
+            &__address-info{
             }
           }
         }
       }
     }
-    &__oepning-hours {
-      margin-top: 20px;
-      padding-top: 20px;
-      padding-bottom: 50px;
-      background-color: $background;
-      .oepning-hours__contents {
-        margin: 0 auto;
-        width: 400px;
-        &__title {
-          line-height: 50px;
-          text-align: center;
-          font-size: 20px;
-          font-weight: 600;
-          margin-bottom: 20px;
-          .clock-icon {
-            color: $text-color;
-          }
-          .title-text {
-          }
-        }
-        &__list {
-          font-size: 20px;
-          .regular_holidays {
-            margin-bottom: 10px;
-          }
-          .oepning-hours {
-          }
-        }
-      }
-    }
-    &__address {
-      margin-top: 20px;
-      padding-top: 20px;
-      padding-bottom: 50px;
-      background-color: $background;
-      .address__contents {
-        margin: 0 auto;
-        width: 400px;
-        &__title {
-          line-height: 50px;
-          text-align: center;
-          font-size: 20px;
-          font-weight: 600;
-          margin-bottom: 20px;
-          .map-icon {
-            color: $text-color;
-          }
-          .title-text {
-          }
-        }
-        &__address-info{
-        }
-      }
-    }
-
   }
 }
+
+.tab-content {
+  &__item {
+    .restaurant-menus {
+      margin-bottom: 50px;
+      &__contents {
+        margin: 0 auto;
+        padding-top: 30px;
+        width: 800px;
+        &__title {
+          line-height: 40px;
+          font-size: 20px;
+        }
+        .menu-list {
+          &__item {
+            background-color: #FFF9C4;
+            display: flex;
+            margin-top: 20px;
+            padding: 20px 30px 20px 20px;
+            border-radius: 30px;
+            &__image {
+              .image {
+                width: 120px;
+                height: 120px;
+                border-radius: 30px;
+                margin-right: 30px;
+              }
+            }
+            &__info {
+              width: 100%;
+              .menu-name-price {
+                display: flex;
+                justify-content: space-between;
+                .name {
+                  font-size: 18px;
+                  font-weight: 800;
+                }
+                .price {
+                  
+                }
+              }
+              .menu-categories {
+                line-height: 20px;
+                display: flex;
+                flex-wrap: wrap;
+                margin: 5px 0 5px 0;
+                .category-name {
+                  background-color: #FFEB3B;
+                  font-size: 15px;
+                  padding: 5px;
+                  margin: 0 5px 5px 0;
+                  border-radius: 10px;
+                }
+              }
+              .menu-description {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

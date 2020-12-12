@@ -1,70 +1,141 @@
 = render "layouts/main_header"
 
-.restaurant-details
-  .restaurant-details__contents
-    %section.restaurant-details__contents__title
-      .restaurant-title
-        %h2.restaurant-name= @cafe_restaurant.name
+%ul.tab-menu
+  %li.tab-menu__item
+    %span.tab-trigger.js-tab-trigger.turn-on{"data-id" => "tab01"} 店舗情報
+  %li.tab-menu__item
+    %span.tab-trigger.js-tab-trigger{"data-id" => "tab02"} メニュー
 
-    %section.restaurant-details__contents__images
-      .restaurant-images
-        %ul.image-outer.slider
-          - @cafe_restaurant.images.each do |image|
-            %li= image_tag image.image.url, class: 'restaurant-image slide-itme'
-          
-        %ul.image-dots.thumbnail-list
-          - @cafe_restaurant.images.each do |image|
-            .image-dots__dot
-              = image_tag image.image.url, class: 'dot-inner thumbnail-item', width: 50
+.tab-content
+  .tab-content__item.js-tab-target.is-active{ id: "tab01"}
+    .restaurant-details
+      .restaurant-details__contents
+        %section.restaurant-details__contents__title
+          .restaurant-title
+            %h2.restaurant-name= @cafe_restaurant.name
 
-    %section.restaurant-details__contents__info
-      .restaurant-info
-        .info-box
-          .restaurant-address
-            %i.fas.fa-map-marker-alt.map-icon
-            = @prefecture.name
-            = @cafe_restaurant.city_ward
-            = @cafe_restaurant.block_number
-            = @cafe_restaurant.building_name
-          .restaurant-phone-number
-            %i.fas.fa-phone.phone-icon
-            = @cafe_restaurant.phone_number
-          .restaurant-description
-            = @cafe_restaurant.description
+        %section.restaurant-details__contents__images
+          .restaurant-images
+            %ul.image-outer.slider
+              - @cafe_restaurant.images.each do |image|
+                %li= image_tag image.image.url, class: 'restaurant-image slide-itme'
+              
+            %ul.image-dots.thumbnail-list
+              - @cafe_restaurant.images.each do |image|
+                .image-dots__dot
+                  = image_tag image.image.url, class: 'dot-inner thumbnail-item', width: 50
 
-    %section.restaurant-details__contents__features
-      .features-contents
-        .features-contents__title
-          %i.fas.fa-hand-point-right.hand-icon
-          %span お店の特徴
-        .features-contents__categories
-          %ul.categories-list
-            - @cafe_restaurant.categories.each do |category|
-              %li.categories-list__box
-                = category.name
+        %section.restaurant-details__contents__info
+          .restaurant-info
+            .info-box
+              .restaurant-address
+                %i.fas.fa-map-marker-alt.map-icon
+                = @prefecture.name
+                = @cafe_restaurant.city_ward
+                = @cafe_restaurant.block_number
+                = @cafe_restaurant.building_name
+              .restaurant-phone-number
+                %i.fas.fa-phone.phone-icon
+                = @cafe_restaurant.phone_number
+              .restaurant-description
+                = @cafe_restaurant.description
 
-    %section.restaurant-details__contents__oepning-hours
-      .oepning-hours__contents
-        .oepning-hours__contents__title
-          %i.far.fa-clock.clock-icon
-          %span.title-text 営業時間
-        %ul.oepning-hours__contents__list
-          %li.regular_holidays
-            = "定休日: [ #{@cafe_restaurant.regular_holidays} ]"
-          %li.oepning-hours
-            = "営業時間: [ #{@cafe_restaurant.opening_hours} ]"
+        %section.restaurant-details__contents__features
+          .features-contents
+            .features-contents__title
+              %i.fas.fa-hand-point-right.hand-icon
+              %span お店の特徴
+            .features-contents__categories
+              %ul.categories-list
+                - @cafe_restaurant.categories.each do |category|
+                  %li.categories-list__box
+                    = category.name
 
-    %section.restaurant-details__contents__address
-      .address__contents
-        .address__contents__title
-          %i.fas.fa-map-marker-alt.map-icon
-          %span.title-text アクセス
-        .address__contents__address-info
-          = @prefecture.name
-          = @cafe_restaurant.city_ward
-          = @cafe_restaurant.block_number
-          = @cafe_restaurant.building_name
+        %section.restaurant-details__contents__oepning-hours
+          .oepning-hours__contents
+            .oepning-hours__contents__title
+              %i.far.fa-clock.clock-icon
+              %span.title-text 営業時間
+            %ul.oepning-hours__contents__list
+              %li.regular_holidays
+                = "定休日: [ #{@cafe_restaurant.regular_holidays} ]"
+              %li.oepning-hours
+                = "営業時間: [ #{@cafe_restaurant.opening_hours} ]"
 
-        
+        %section.restaurant-details__contents__address
+          .address__contents
+            .address__contents__title
+              %i.fas.fa-map-marker-alt.map-icon
+              %span.title-text アクセス
+            .address__contents__address-info
+              = @prefecture.name
+              = @cafe_restaurant.city_ward
+              = @cafe_restaurant.block_number
+              = @cafe_restaurant.building_name
+
+  .tab-content__item.js-tab-target{ id: "tab02"}
+    .restaurant-menus
+      .restaurant-menus__contents
+        .restaurant-menus__contents__title
+          %h2 メニューリスト
+          %h3= "全#{ @menus.length}件"
+        %ul.menu-list
+          - @menus.each do |menu|
+            %li.menu-list__item
+              .menu-list__item__image
+                = image_tag menu.image.url, class: "image"
+              .menu-list__item__info
+                .menu-name-price
+                  .name
+                    = menu.name
+                  .price
+                    = "¥ #{menu.price.to_s(:delimited)}"
+                %ul.menu-categories
+                  - menu.menu_categories.each do |mc|
+                    %li.category-name
+                      = mc.name
+                .menu-description
+                  = menu.description
+
+
+
+
+- if user_signed_in? 
+  - if current_user.id === @cafe_restaurant.owner_id
+    .new-menu
+      .new-menu__contents
+        %h2.new-menu__contents__title メニューの登録はこちらから!
+        .display-btn.btn-trigger.js-btn-trigger
+          %span メニュー登録
+        %p.new-menu__contents__text ※登録したお店のメニューを掲載したい場合、こちらの画面より、メニューの登録を行って下さい
+        = form_with model: [@cafe_restaurant, @menu], local: true, class: "new-menu__contents__form", id: "form" do |form|
+          .form-container.btn-content__item.js-btn-target
+            %h3.form-container__info-title メニュー情報
+            %table.form-container__info-table
+              %tr
+                %th.table-holder メニュー名
+                %td.table-data
+                  = form.text_field :name, placeholder: "(例) グルテンフリー醤油ラーメン", class: "table-data__input-field"
+              %tr
+                %th.table-holder 値段
+                %td.table-data
+                  = form.number_field :price, placeholder: "0", class: "table-data__input-field"
+              %tr
+                %th.table-holder メニューの説明
+                %td.table-data
+                  = form.text_area :description, maxlength: "30", placeholder: "メニューの説明を30文字以内で書いてください", class: "table-data__input-textarea"
+              %tr
+                %th.table-holder カテゴリー
+                %td.table-data.menu-category
+                  = form.collection_check_boxes(:menu_category_ids, MenuCategory.all, :id, :name, class: "menu-category__checkbox") do |category|
+                    = category.label(class: "menu-category__checkbox__label") do
+                      = category.check_box
+                      = category.text
+            .image-uploader
+              %h4.image-uploader__title 料理の画像
+              = form.file_field :image, class: "image-uploader__form"
+            .field
+              = form.submit "メニューを追加する", class: "menu-submit-btn"
+
 
 = render "layouts/main_footer"

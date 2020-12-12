@@ -1,0 +1,53 @@
+$main-color: #aeea00;
+$text-color: #37474f;
+$background: #ffffff;
+
+.tab-menu {
+  display: flex;
+  width: 940px;
+  margin: 0 auto;
+  margin-top: 30px;
+  &__item {
+    padding: 0 5px;
+  }
+}
+
+.tab-trigger { 
+  text-align: left;
+  cursor: pointer;
+  display: block;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-bottom: 0;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  background-color: #fafafa;
+  position: relative;
+}
+
+.tab-trigger.is-active {
+  background-color: $main-color;
+}
+
+.tab-content {
+  border-top: 1px solid #ccc;
+  &__item {
+    display: none;
+    text-align: left;
+
+  }
+}
+
+.tab-content__item.is-active {
+  display: block;
+  animation: fade 0.5s ease;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
