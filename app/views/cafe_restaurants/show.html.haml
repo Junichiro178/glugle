@@ -69,10 +69,26 @@
   .menu-register__contents
     .menu-register__contents__title
       %h2 オーナーさん、メニューの登録はこちらから!
-    .menu-register__contents__btn
-      = link_to new_cafe_restaurant_menu_path(@cafe_restaurant.id), class: "menu-register-btn" do
-        %span メニューを登録
-
+    .new-menu
+      .new-menu__contents
+        %h2.new-menu__contents__title メニュー新規登録
+        %p.new-menu__contents__text ※登録したお店のメニューを掲載したい場合、こちらの画面より、メニューの登録を行って下さい
+        = form_with model: [@cafe_restaurant, @menu], local: true, class: ".new-menu__contents__form", id: "form" do |form|
+          .name
+            = form.text_field :name, placeholder: "(例) グルテンフリー醤油ラーメン"
+          .price
+            = form.number_field :price, placeholder: "0"
+          .description
+            = form.text_area :description, placeholder: "メニューの説明を20文字以内で書いてください"
+          -# .menu-category
+          -#   = form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
+          -#     = category.label do
+          -#       = category.check_box
+          -#       = category.text
+          .image
+            = form.file_field :image
+          .submit
+            = form.submit "メニューを追加"
         
 
 = render "layouts/main_footer"
