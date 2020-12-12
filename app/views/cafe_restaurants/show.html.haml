@@ -80,11 +80,11 @@
             = form.number_field :price, placeholder: "0"
           .description
             = form.text_area :description, placeholder: "メニューの説明を20文字以内で書いてください"
-          -# .menu-category
-          -#   = form.collection_check_boxes(:category_ids, Category.all, :id, :name) do |category|
-          -#     = category.label do
-          -#       = category.check_box
-          -#       = category.text
+          .menu-category
+            = form.collection_check_boxes(:menu_category_ids, MenuCategory.all, :id, :name) do |category|
+              = category.label do
+                = category.check_box
+                = category.text
           .image
             = form.file_field :image
           .submit
