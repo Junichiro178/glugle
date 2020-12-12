@@ -74,33 +74,39 @@
       .new-menu__contents
         %h2.new-menu__contents__title メニュー新規登録
         %p.new-menu__contents__text ※登録したお店のメニューを掲載したい場合、こちらの画面より、メニューの登録を行って下さい
-        %ul.tab-menu
-          %li.tab-menu__item
-            %span.tab-trigger.js-tab-trigger.is-active{"data-id" => "tab01"} メニュー登録
-          %li.tab-menu__item
-            %span.tab-trigger.js-tab-trigger{"data-id" => "tab02"} 戻る
+        .new-menu__contents__form
+          .display-btn
+            %span.tab-trigger.js-tab-trigger メニュー登録
+          .form-contents
+            .tab-content__item.js-tab-target
+              = form_with model: [@cafe_restaurant, @menu], local: true, class: ".new-menu__contents__form", id: "form" do |form|
+                .form-container
+                  %h3.form-container__info-title メニュー情報
+                  %table.form-container__info-table
+                    %tr
+                      %th.table-holder メニュー名
+                      %td.table-data
+                        = form.text_field :name, placeholder: "(例) グルテンフリー醤油ラーメン", class: "table-data__input-field"
+                    %tr
+                      %th.table-holder 値段
+                      %td.table-data
+                        = form.number_field :price, placeholder: "0", class: "table-data__input-field"
+                    %tr
+                      %th.table-holder メニューの説明
+                      %td.table-data
+                        = form.text_area :description, placeholder: "メニューの説明を20文字以内で書いてください", class: "table-data__input-textarea"
+                    %tr
+                      %th.table-holder カテゴリー
+                      %td.table-data
+                        = form.collection_check_boxes(:menu_category_ids, MenuCategory.all, :id, :name) do |category|
+                          = category.label do
+                            = category.check_box
+                            = category.text
+                  .image-uploader
+                    %h4.image-uploader__title お店の画像
+                    = form.file_field :image
+                  .field
+                    = form.submit "メニューを追加", class: "menu-submit-btn"
 
-        .tab-content
-          .tab-content__item.js-tab-target.is-active{id: 'tab01'}
-            = form_with model: [@cafe_restaurant, @menu], local: true, class: ".new-menu__contents__form", id: "form" do |form|
-              .name
-                = form.text_field :name, placeholder: "(例) グルテンフリー醤油ラーメン"
-              .price
-                = form.number_field :price, placeholder: "0"
-              .description
-                = form.text_area :description, placeholder: "メニューの説明を20文字以内で書いてください"
-              .menu-category
-                = form.collection_check_boxes(:menu_category_ids, MenuCategory.all, :id, :name) do |category|
-                  = category.label do
-                    = category.check_box
-                    = category.text
-              .image
-                = form.file_field :image
-              .submit
-                = form.submit "メニューを追加"
-          .tab-content__item.js-tab-target{id: 'tab02'}
-            %span なにもなし
-
-        
 
 = render "layouts/main_footer"
