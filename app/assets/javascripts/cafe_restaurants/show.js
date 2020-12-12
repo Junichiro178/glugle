@@ -30,15 +30,7 @@ $(document).on('turbolinks:load', function(){
     $(thumbnailItem+'[data-index="'+nextSlide+'"]').addClass("thumbnail-current");
   });
 
-  // Menu form display function 
-  var btn = document.querySelector('.js-btn-trigger');
-  var btnTarget = document.querySelector('.js-btn-target')
-
-  btn.addEventListener('click', () => {
-    btnTarget.classList.add("is-active")
-  });
-
-  // タブの切り替え機能
+    // タブの切り替え機能
   const tabTriggers = document.querySelectorAll('.js-tab-trigger');
   const tabTargets = document.querySelectorAll('.js-tab-target');
 
@@ -63,5 +55,15 @@ $(document).on('turbolinks:load', function(){
             }
         });
     }
+
+  // メニューフォームの表示
+  var btn = document.querySelector('.js-btn-trigger');
+  var btnTarget = document.querySelector('.js-btn-target')
+
+  btn.addEventListener('click', () => {
+    btnTarget.classList.add("is-active")
+  });
+
+
 
 });
