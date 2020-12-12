@@ -83,15 +83,19 @@
           - @menus.each do |menu|
             %li.menu-list__item
               .menu-list__item__image
-                = image_tag menu.image.url, width: 150, height: 150
+                = image_tag menu.image.url, class: "image"
               .menu-list__item__info
-                .menu-name
-                  = menu.name
-                .menu-price
-                  = "¥ #{menu.price.to_s(:delimited)}"
-                .menu-categories
+                .menu-name-price
+                  .name
+                    = menu.name
+                  .price
+                    = "¥ #{menu.price.to_s(:delimited)}"
+                %ul.menu-categories
                   - menu.menu_categories.each do |mc|
-                    = mc.name
+                    %li.category-name
+                      = mc.name
+                .menu-description
+                  = menu.description
 
 
 
@@ -119,7 +123,7 @@
               %tr
                 %th.table-holder メニューの説明
                 %td.table-data
-                  = form.text_area :description, placeholder: "メニューの説明を20文字以内で書いてください", class: "table-data__input-textarea"
+                  = form.text_area :description, maxlength: "30", placeholder: "メニューの説明を30文字以内で書いてください", class: "table-data__input-textarea"
               %tr
                 %th.table-holder カテゴリー
                 %td.table-data.menu-category
