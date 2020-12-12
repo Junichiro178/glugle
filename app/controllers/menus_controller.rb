@@ -1,11 +1,10 @@
 class MenusController < ApplicationController
 
-  def new
-    @menu = Menu.new
-  end
-
   def create
     @menu = Menu.create(menu_params)
+    if @menu.save
+      redirect_to  cafe_restaurant_path(@menu)
+    end
   end
 
   private
@@ -16,7 +15,7 @@ class MenusController < ApplicationController
       :image, 
       :description,
       )
-      .merge(cafe_restaurant_id: params[:cafe_restaurant.id])
+      .merge(cafe_restaurant_id: params[:cafe_restaurant_id])
   end
 
 end
