@@ -172,3 +172,37 @@ $background: #ffffff;
   }
 }
 
+.tab-content {
+  &__item {
+    .restaurant-menus {
+      &__contents {
+        margin: 0 auto;
+        padding-top: 30px;
+        width: 940px;
+        
+        &__title {
+        }
+        .menu-list {
+          &__item {
+            display: flex;
+            &__image {
+
+            }
+            &__info {
+              .menu-name {
+
+              }
+              .menu-price {
+                
+              }
+              .menu-categories {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
