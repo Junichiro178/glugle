@@ -65,6 +65,14 @@
           = @cafe_restaurant.block_number
           = @cafe_restaurant.building_name
 
+.menu-register
+  .menu-register__contents
+    .menu-register__contents__title
+      %h2 オーナーさん、メニューの登録はこちらから!
+    .menu-register__contents__btn
+      = link_to new_cafe_restaurant_menu_path(@cafe_restaurant.id), class: "menu-register-btn" do
+        %span メニューを登録
+
         
 
 = render "layouts/main_footer"
