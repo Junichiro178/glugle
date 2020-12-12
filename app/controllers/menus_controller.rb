@@ -1,11 +1,12 @@
 class MenusController < ApplicationController
 
   def create
+    @cafe_restaurant = CafeRestaurant.includes(:images).find(params[:cafe_restaurant_id])
     @menu = Menu.create(menu_params)
     if @menu.save
-      redirect_to  cafe_restaurant_path(@menu)
+      redirect_to cafe_restaurant_path(@menu)
     else
-      redirect_to  cafe_restaurant_path(@menu), alert: "メニューが登録できませんでした"
+      redirect_to cafe_restaurant_path(@cafe_restaurant), alert: "メニューが登録できませんでした"
     end
   end
 
