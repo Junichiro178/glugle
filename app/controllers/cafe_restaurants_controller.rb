@@ -22,6 +22,7 @@ class CafeRestaurantsController < ApplicationController
     @cafe_restaurant = CafeRestaurant.includes(:images).find(params[:id])
     @prefecture = Prefecture.find(@cafe_restaurant.prefecture_id)
     @menu = Menu.new
+    @menus = @cafe_restaurant.menus
   end
 
   def search
