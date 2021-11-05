@@ -51,5 +51,10 @@ production:
   <<: *default
   database: glugle_production
   username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
+  password: <%= ENV['178504jun'] %>
   socket: /var/lib/mysql/mysql.sock
+
+  # database: glugle_production
+  # username: root
+  # password: <%= ENV['DATABASE_PASSWORD'] %>
+  # socket: /var/lib/mysql/mysql.sock
