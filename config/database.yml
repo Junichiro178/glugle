@@ -49,9 +49,9 @@ test:
 #
 production:
   <<: *default
-  database: glugle_production
+  database: アプリ名_production
   username: root
-  password: <%= ENV['178504jun'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   socket: /var/lib/mysql/mysql.sock
 
   # database: glugle_production
